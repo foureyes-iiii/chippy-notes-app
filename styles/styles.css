@@ -15,25 +15,6 @@ body {
     margin: 0;
 }
 
-.nav {
-    width: 20em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.5em;
-}
-
-.nav header {
-    font-size: 2.5em;
-}
-
-.nav nav {
-    width: 100%;
-    margin-top: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .nav nav button {
     width: 60%;
@@ -97,7 +78,18 @@ body {
 }
 
 #note-window {
-    width: 50vh; /* Set your desired width */
+    width: 100%; /* Set your desired width */
     height: 70vh;
     overflow-y: auto; /* Add a scrollbar if needed */
+}
+
+ .card-body {
+    width: 100%;
+}
+.note {
+    width: 100%; /* Set the width to 100% to fill the note window */
+    margin-bottom: 10px;
+}
+.message {
+    width: 100%;
 }

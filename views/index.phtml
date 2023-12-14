@@ -51,7 +51,54 @@
         </main>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get elements
+        const noteInput = document.getElementById("note-input");
+        const noteSubmitButton = document.getElementById("note-submit");
+        const noteWindow = document.getElementById("note-window");
 
+        // Function to add a new note
+        function addNewNote() {
+            // Get the value of the input field
+            const newNoteText = noteInput.value;
+
+            // Check if the input is not empty
+            if (newNoteText.trim() !== "") {
+                // Create a new note element
+                const newNote = document.createElement("div");
+                newNote.className = "note";
+                newNote.innerHTML = `
+                    <div class="nickname">John Doe</div>
+                    <div class="message border rounded p-3">
+                        ${newNoteText}
+                    </div>
+                `;
+
+                // Append the new note to the note window
+                noteWindow.appendChild(newNote);
+
+                // Clear the input field
+                noteInput.value = "";
+            }
+        }
+
+        // Add click event listener to the submit button
+        noteSubmitButton.addEventListener("click", addNewNote);
+
+        // Add key press event listener to the input box
+        noteInput.addEventListener("keypress", function (event) {
+            // Check if the pressed key is Enter (key code 13)
+            if (event.key === "Enter") {
+                // Prevent the default behavior of the Enter key (form submission)
+                event.preventDefault();
+
+                // Add a new note
+                addNewNote();
+            }
+        });
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
